@@ -29,18 +29,23 @@ $messages = $query->fetchAll(PDO::FETCH_ASSOC);
   </div>
   <div class="form-group">
     <label for="message">Tape ton message :</label>
-    <textarea type="text" class="form-control" name="message" id="message" placeholder="Ton message"></textarea>
+    <textarea type="text" class="form-control" name="message" id="message" placeholder="Ton message" aria-describedby="messageHelp"></textarea>
     <small class="form-text text-muted">Caractères restants : <span id="count"></span></small>
+    <h5 id="messageHelp" class="form-text"></h5>
   </div>
-  <button type="submit" name="new_message" class="btn btn-primary">Envoyer</button>
+  <button type="submit" name="new_message" id="new_message" class="btn btn-primary">Envoyer</button>
 </form>
 
 <!-- Message display -->
-<?php
-foreach ($messages as $key => $message) {
-  echo "<p><strong>" . htmlspecialchars($message["pseudo"]) . "</strong> :". " " . htmlspecialchars($message["message"]) . "</p>";
-}
-?>
+<section>
+  <div class="container text-center">
+  <?php
+  foreach ($messages as $key => $message) {
+    echo "<p><strong>" . htmlspecialchars($message["pseudo"]) . "</strong> :". " " . htmlspecialchars($message["message"]) . "</p>";
+  }
+  ?>
+  </div>
+</section>
 
 <?php
 $JS = "<script src='public/js/main.js'></script>";
