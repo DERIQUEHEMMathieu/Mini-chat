@@ -1,11 +1,5 @@
 <?php
-// Connect to database
-try {
-    $bd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
-} catch(PDOException $e) {
-    print "Erreur !: " . $e->getMessage() . "<br/>";
-    die();
-}
+require "connection.php";
 
 // If new message has been submited
 if(!empty($_POST) && isset($_POST["new_message"])) {

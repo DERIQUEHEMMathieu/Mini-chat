@@ -1,16 +1,9 @@
-<?php $site_title = "Mon mini-chat";
+<?php $site_title = "Minichat";
 include "template/header.php";
+require "connection.php";
 ?>
 
 <?php
-// Connect to database
-try {
-  $bd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
-} catch(PDOException $e) {
-  print "Erreur !: " . $e->getMessage() . "<br/>";
-  die();
-}
-
 // Retrieve the last 10 messages
 $query = $bd->query (
   "SELECT pseudo, message FROM minichat
@@ -51,4 +44,3 @@ $messages = $query->fetchAll(PDO::FETCH_ASSOC);
 $JS = "<script src='public/js/main.js'></script>";
 include "template/footer.php";
 ?>
-
