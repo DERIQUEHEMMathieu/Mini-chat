@@ -1,5 +1,5 @@
 <?php
-require "connection.php";
+require_once "connection.php";
 
 // If new message has been submited
 if(!empty($_POST) && isset($_POST["new_message"])) {

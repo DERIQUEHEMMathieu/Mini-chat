@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-  <title><?php echo $site_title; ?></title>
+  <title><?php echo $site_title;?></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,6 +12,7 @@
   <meta property="og:image" content="">
 
   <link rel="apple-touch-icon" href="public/img/Logo.png">
+    <link rel="shortcut icon" href="public/img/Logo.ico" type="image/x-icon">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -24,7 +25,7 @@
 <header>
 <section class="bg-primary">
     <div class="container text-center">
-      <h1 class="display-4 font-weight-bold">Mon mini-chat</h1>
+      <h1 class="display-4 font-weight-bold">Mini tchat</h1>
      <img class="img-fluid pb-3 mx-auto" src="public/img/Logo.png" alt="Logo mon mini-chat">
     </div>
   </section>

@@ -1,6 +1,6 @@
-<?php $site_title = "Minichat";
+<?php $site_title = "Mon mini-chat";
 include "template/header.php";
-require "connection.php";
+require_once "connection.php";
 ?>
 
 <?php
@@ -30,15 +30,20 @@ $messages = $query->fetchAll(PDO::FETCH_ASSOC);
 </form>
 
 <!-- Message display -->
-<section>
-  <div class="container text-center">
-  <?php
-  foreach ($messages as $key => $message) {
-    echo "<p><strong>" . htmlspecialchars($message["pseudo"]) . "</strong> :". " " . htmlspecialchars($message["message"]) . "</p>";
-  }
-  ?>
+<?php
+  foreach ($messages as $key => $message) :
+?>
+
+<article class="card text-dark bg-warning font-weight-bold my-4 mx-auto px-0 col-4" style="max-width: 18rem;">
+  <div class="card-header card-title text-center"><p><?php echo htmlspecialchars($message["pseudo"])?> :</p></div>
+  <div class="card-body bg-white text-center p-1">
+    <p class="card-text text-dark"><?php echo htmlspecialchars($message["message"])?></p>
   </div>
-</section>
+</article>
+
+<?php
+  endforeach;
+?>
 
 <?php
 $JS = "<script src='public/js/main.js'></script>";
