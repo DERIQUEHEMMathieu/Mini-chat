@@ -26,7 +26,9 @@ $messages = $query->fetchAll(PDO::FETCH_ASSOC);
     <small class="form-text text-muted">Caractères restants : <span id="count"></span></small>
     <h5 id="messageHelp" class="form-text"></h5>
   </div>
-  <button type="submit" name="new_message" id="new_message" class="btn btn-primary">Envoyer</button>
+  <div class="d-flex justify-content-center mt-3 login_container">
+    <button type="submit" name="new_message" id="new_message" class="btn btn-primary">Envoyer</button>
+  </div>
 </form>
 
 <!-- Message display -->
